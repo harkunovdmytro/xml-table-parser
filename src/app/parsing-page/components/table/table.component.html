@@ -1,0 +1,18 @@
+<h2>Table</h2>
+
+<div class="table-content">
+  <ng-container *ngIf="tableDoc; else placeholder">
+    <table>
+      <tr>
+        <th *ngFor="let header of tableDoc[0]">{{ header.tagName }}</th>
+      </tr>
+      <tr *ngFor="let row of tableDoc">
+        <td *ngFor="let column of row">{{ column.innerHTML.trim() }}</td>
+      </tr>
+    </table>
+  </ng-container>
+</div>
+
+<ng-template #placeholder>
+  <p>There is no uploaded tables</p>
+</ng-template>
