@@ -6,7 +6,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./file-reader.component.scss']
 })
 export class FileReaderComponent {
-  @Output() onDocumentParsed = new EventEmitter<Element[][]>;
+  @Output() documentParsed = new EventEmitter<Element[][]>;
 
   fileSelected(event: any): void {
     const file = (event.target as { files: File[] }).files[0];
@@ -43,7 +43,7 @@ export class FileReaderComponent {
         }
 
         console.log('Table data: ', parsedTable);
-        this.onDocumentParsed.emit(parsedTable);
+        this.documentParsed.emit(parsedTable);
       });
     }
   }

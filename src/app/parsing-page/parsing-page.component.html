@@ -1,4 +1,4 @@
 <div class="content">
-  <app-file-reader (onDocumentParsed)="tableDoc = $event"></app-file-reader>
+  <app-file-reader (documentParsed)="tableDoc = $event"></app-file-reader>
   <app-table [tableDoc]="tableDoc"></app-table>
 </div>
